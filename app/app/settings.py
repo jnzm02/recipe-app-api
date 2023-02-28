@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # 3-rd party
     'rest_framework',
     'drf_spectacular',
+    'rest_framework.authtoken',
 
     # Local
     'core',
