@@ -6,7 +6,7 @@ from django.contrib import admin # noqa
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 
-import models
+from . import models
 
 
 class UserAdmin(BaseUserAdmin):
