@@ -40,7 +40,7 @@ INSTALLED_APPS = [
 
     # 3-rd party
     'rest_framework',
-    'drf-spectacular',
+    'drf_spectacular',
 
     # Local
     'core'
