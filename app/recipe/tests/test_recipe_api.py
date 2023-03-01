@@ -11,7 +11,7 @@ from core.models import Recipe
 
 from recipe.serializers import RecipeSerializer
 
-RECIPES_URL = reverse('recipe:recipe-list')
+RECIPE_URL = reverse('recipe:recipe-list')
 
 
 def create_recipe(user, **params):
@@ -57,7 +57,7 @@ class PrivateRecipeAPITests(TestCase):
         create_recipe(user=self.user)
         create_recipe(user=self.user)
 
-        res = self.client.get(RECIPES_URL)
+        res = self.client.get(RECIPE_URL)
 
         recipes = Recipe.objects.all().order_by('-id')
         serializer = RecipeSerializer(recipes, many=True)
@@ -74,7 +74,7 @@ class PrivateRecipeAPITests(TestCase):
         create_recipe(user=user2)
         create_recipe(user=self.user)
 
-        res = self.client.get(RECIPES_URL)
+        res = self.client.get(RECIPE_URL)
 
         recipes = Recipe.objects.filter(user=self.user)
         serializer = RecipeSerializer(recipes, many=True)
